@@ -85,7 +85,7 @@ window_rules:
     match:
       # Ignores any Zebar windows.
       - window_process: { equals: 'zebar' }
-      - window_process: { regex: 'QQ|PowerToys' }
+      - window_process: { regex: 'QQ|DingTalk|PowerToys|scrcpy' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
@@ -98,7 +98,7 @@ window_rules:
   - commands: ['toggle-floating --centered']
     match:
       - window_title: { regex: 'Telegram Web'}
-      - window_process: {regex: 'explorer|Taskmgr|pwsh|WeChat|wezterm-gui|Notepad|cloudmusic|WsaClient|7zFM|Feishu|DingTalk|QQ|scrcpy|TablePlus|Motrix|Clash Verge'}
+      - window_process: {regex: 'explorer|Taskmgr|pwsh|WeChat|wezterm-gui|Notepad|cloudmusic|WsaClient|7zFM|Feishu|TablePlus|Motrix|Clash Verge'}
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -209,10 +209,10 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe']
+  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start wsl -d fedora --cd ~ -e tmux new-session -D -A -s coding']
     bindings: ['alt+shift+enter']
 
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start pwsh']
+  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe']
     bindings: ['alt+shift+p']
 
   - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\googlechrome\\current\\chrome.exe']

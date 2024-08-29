@@ -12,7 +12,7 @@ local config = {
 	window_background_opacity = 0.85,
 	hide_tab_bar_if_only_one_tab = true,
 
-	default_prog = { "wsl", "-d", "fedora", "--cd", "~", "-e", "tmux", "new-session", "-D", "-A", "-s", "main" },
+	default_prog = { "pwsh" },
 
 	-- 禁用默认的key绑定
 	disable_default_key_bindings = true,
