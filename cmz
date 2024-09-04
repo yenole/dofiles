@@ -1,0 +1,22 @@
+#!/bin/bash
+
+function update() {
+    FILE="$HOME/.dofiles/scripts/$1_update.sh"
+    if [ -f $FILE ]; then
+        . $FILE
+    else
+        echo "未知软件"
+    fi
+}
+
+case "$1" in
+init)
+    echo "11111"
+    ;;
+update)
+    update $2
+    ;;
+*)
+    echo "未知命令"
+    ;;
+esac
