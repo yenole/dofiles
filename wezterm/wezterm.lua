@@ -18,10 +18,10 @@ local config = {
 	disable_default_key_bindings = true,
 	keys = {
 		{ key = "Escape", mods = "SHIFT", action = wezterm.action.SendKey({ key = "~" }) },
-		{ key = "Delete", mods="SHIFT", action = wezterm.action.SendKey({ key = "`" }) },
+		{ key = "Delete", mods = "SHIFT", action = wezterm.action.SendKey({ key = "`" }) },
 		{ key = "v", mods = "ALT|SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
-		{ key = 'UpArrow', mods = 'SHIFT', action = wezterm.action.ScrollByLine(-1) }, 
-		 { key = 'DownArrow', mods = 'SHIFT', action = wezterm.action.ScrollByLine(1) },
+		{ key = "UpArrow", mods = "SHIFT", action = wezterm.action.ScrollByLine(-1) },
+		{ key = "DownArrow", mods = "SHIFT", action = wezterm.action.ScrollByLine(1) },
 	},
 
 	mouse_bindings = {

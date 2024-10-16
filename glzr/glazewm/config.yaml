@@ -210,10 +210,10 @@ keybindings:
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
   - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start wsl -d arch --cd ~ -e tmux new-session -D -A -s coding']
-    bindings: ['alt+shift+enter']
+    bindings: ['alt+shift+\']
 
   - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe']
-    bindings: ['alt+shift+p']
+    bindings: ['alt+shift+enter']
 
   - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\googlechrome\\current\\chrome.exe']
     bindings: ['alt+shift+/']
