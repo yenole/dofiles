@@ -9,12 +9,25 @@ function update() {
     fi
 }
 
+function disk() {
+    echo "loading $1.vhdx"
+    pwsh.exe -c "wsl -d arch --unmount" >>/dev/null
+    sleep 1s
+    pwsh.exe -c "wsl -d arch --mount --vhd D:\developer\distros\\$1.vhdx --name coding --bare" >>/dev/null
+    last_disk=$(lsblk -np | awk 'END{print $1}')
+    mount -t auto $last_disk /root/coding/
+    echo "loading $1.vhdx done!"
+}
+
 case "$1" in
 init)
     echo "11111"
     ;;
 update)
     update $2
+    ;;
+disk)
+    disk $2
     ;;
 *)
     echo "未知命令"
