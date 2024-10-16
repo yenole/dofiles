@@ -98,7 +98,7 @@ window_rules:
   - commands: ['toggle-floating --centered']
     match:
       - window_title: { regex: 'Telegram Web'}
-      - window_process: {regex: 'explorer|Taskmgr|Photos|pwsh|WeChat|wezterm-gui|Notepad|cloudmusic|WsaClient|7zFM|Feishu|TablePlus|Motrix|Clash Verge|scrcpy'}
+      - window_process: {regex: 'explorer|Taskmgr|Photos|pwsh|Todo|WeChat|wezterm-gui|Notepad|cloudmusic|WsaClient|7zFM|Feishu|TablePlus|Motrix|Clash Verge|scrcpy'}
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -209,7 +209,7 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start wsl -d fedora --cd ~ -e tmux new-session -D -A -s coding']
+  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start wsl -d arch --cd ~ -e tmux new-session -D -A -s coding']
     bindings: ['alt+shift+enter']
 
   - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe']
