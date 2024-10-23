@@ -9,19 +9,27 @@ function update() {
     fi
 }
 
+function init() {
+    FILE="$HOME/.dofiles/scripts/init_$1.sh"
+    if [ -f $FILE ]; then
+        . $FILE
+    else
+        echo "未知初始化"
+    fi
+}
+
 function disk() {
     echo "loading $1.vhdx"
     pwsh.exe -c "wsl -d arch --unmount" >>/dev/null
-    sleep 1s
     pwsh.exe -c "wsl -d arch --mount --vhd D:\developer\distros\\$1.vhdx --name coding --bare" >>/dev/null
-    last_disk=$(lsblk -np | awk 'END{print $1}')
-    mount -t auto $last_disk /root/coding/
+    last_disk=$(lsblk -no name,mountpoint | awk '$2 == "" {print $1}' | tail -n 1)
+    mount -t auto /dev/$last_disk /root/coding/
     echo "loading $1.vhdx done!"
 }
 
 case "$1" in
 init)
-    echo "11111"
+    init $2
     ;;
 update)
     update $2
