@@ -98,7 +98,7 @@ window_rules:
   - commands: ['toggle-floating --centered']
     match:
       - window_title: { regex: 'Telegram Web|Microsoft To Do|YouTube Music'}
-      - window_process: {regex: 'explorer|Taskmgr|Photos|pwsh|WeChat|Weixin|wezterm-gui|Notepad|cloudmusic|WsaClient|7zFM|Feishu|TablePlus|Motrix|Clash Verge|scrcpy'}
+      - window_process: {regex: 'explorer|Taskmgr|Photos|pwsh|WeChat|Weixin|wezterm-gui|Notepad|cloudmusic|WsaClient|7zFM|Feishu|TablePlus|Motrix|Clash Verge|clash-verge|scrcpy'}
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
