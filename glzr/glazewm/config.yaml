@@ -85,11 +85,13 @@ window_rules:
     match:
       # Ignores any Zebar windows.
       - window_process: { equals: 'zebar' }
-      - window_process: { regex: 'DingTalk|PowerToys|QQ' }
+      - window_process: { regex: 'DingTalk|PowerToys|QQ|ToDesk' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
         window_class: { regex: 'Chrome_WidgetWin_1|MozillaDialogClass' }
+
+      - window_class: { regex: 'SunAwtDialog' } 
 
       # Ignore rules for various 3rd-party apps.
       - window_process: { equals: 'Lively' }
@@ -98,7 +100,7 @@ window_rules:
   - commands: ['toggle-floating --centered']
     match:
       - window_title: { regex: 'Telegram Web|Microsoft To Do|YouTube Music'}
-      - window_process: {regex: 'explorer|Taskmgr|Photos|pwsh|WeChat|Weixin|wezterm-gui|Notepad|cloudmusic|WsaClient|7zFM|Feishu|TablePlus|Motrix|Clash Verge|clash-verge|scrcpy'}
+      - window_process: {regex: 'explorer|Taskmgr|Photos|pwsh|WeChat|Weixin|wezterm-gui|Notepad|cloudmusic|WsaClient|7zFM|Feishu|TablePlus|Motrix|Clash Verge|clash-verge|scrcpy|MuMuPlayer'}
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -221,8 +223,16 @@ keybindings:
   - commands: ['shell-exec C:\\Windows\\notepad.exe']
     bindings: ['Alt+Shift+n']
 
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs']
+  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio --screen-off-timeout=30000']
     bindings: ['Alt+Shift+m']
+
+  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio --new-display=800x480 --start-app=com.github.vehicle']
+    bindings: ['Alt+Shift+f12']
+
+  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio --new-display=800x480 --start-app=com.baidu.carlifevehicle']
+    bindings: ['Alt+Shift+f11']
+
+
 
   # Focus the next/previous workspace defined in `workspaces` config.
   #- commands: ['focus --next-workspace']
