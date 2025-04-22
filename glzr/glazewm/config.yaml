@@ -85,7 +85,7 @@ window_rules:
     match:
       # Ignores any Zebar windows.
       - window_process: { equals: 'zebar' }
-      - window_process: { regex: 'explorer|DingTalk|PowerToys|QQ|ToDesk|RoundedTB|rs-xinstar' }
+      - window_process: { regex: 'explorer|DingTalk|PowerToys|QQ|ToDesk|RoundedTB|MSPCManager' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture|Open database' }
@@ -99,7 +99,7 @@ window_rules:
         
   - commands: ['toggle-floating --centered']
     match:
-      - window_title: { regex: 'Telegram Web|Microsoft To Do|YouTube Music|YouTube'}
+      - window_title: { regex: 'Telegram Web|Microsoft To Do|YouTube Music|YouTube|rs-'}
       - window_process: {regex: 'explorer|Taskmgr|Photos|pwsh|WeChat|Weixin|wezterm-gui|Notepad|cloudmusic|WsaClient|7zFM|Feishu|TablePlus|Motrix|Clash Verge|clash-verge|scrcpy|MuMuPlayer|wechatdevtools|CocosCreator'}
 
 binding_modes:
@@ -211,25 +211,25 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start wsl -d arch --cd ~ -e tmux new-session -D -A -s coding']
+  - commands: ['shell-exec C:\\Users\\yoruno\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start wsl -d arch --cd ~ -e tmux new-session -D -A -s coding']
     bindings: ['alt+shift+\']
 
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe']
+  - commands: ['shell-exec C:\\Users\\yoruno\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe']
     bindings: ['alt+shift+enter']
 
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\googlechrome\\current\\chrome.exe']
+  - commands: ['shell-exec C:\\Users\\yoruno\\scoop\\apps\\googlechrome\\current\\chrome.exe']
     bindings: ['alt+shift+/']
 
   - commands: ['shell-exec C:\\Windows\\notepad.exe']
     bindings: ['Alt+Shift+n']
 
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio']
+  - commands: ['shell-exec C:\\Users\\yoruno\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio']
     bindings: ['Alt+Shift+m']
 
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio --new-display=1200x620 --start-app=com.github.vehicle']
+  - commands: ['shell-exec C:\\Users\\yoruno\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio --new-display=1200x620 --start-app=com.github.vehicle']
     bindings: ['Alt+Shift+f12']
 
-  - commands: ['shell-exec C:\\Users\\bit\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio --new-display=900x480 --start-app=com.baidu.carlifevehicle']
+  - commands: ['shell-exec C:\\Users\\yoruno\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio --new-display=900x480 --start-app=com.baidu.carlifevehicle']
     bindings: ['Alt+Shift+f11']
 
 
