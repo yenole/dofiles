@@ -87,7 +87,7 @@ window_rules:
     match:
       - window_title:
           {
-            regex: "Telegram|Microsoft To Do|nyamedia|YouTube|Sparkle|Miniblink|DevTools",
+            regex: "Telegram|Microsoft To Do|nyamedia|Media Server|YouTube|Sparkle|Miniblink|DevTools",
           }
 
       - window_process:
@@ -228,13 +228,7 @@ keybindings:
   # Terminal and Git Bash respectively.
   - commands:
       [
-        'shell-exec C:\\Users\\yoruno\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start wsl -d arch --cd ~ -e tmux new-session -D -A -s coding',
-      ]
-    bindings: ["alt+shift+="]
-
-  - commands:
-      [
-        'shell-exec C:\\Users\\yoruno\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start wsl -d arch --cd ~',
+        'shell-exec C:\\Users\\yoruno\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start --domain "WSL:Arch"',
       ]
     bindings: ['alt+shift+\']
 
