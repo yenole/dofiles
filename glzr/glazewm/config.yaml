@@ -240,7 +240,7 @@ keybindings:
 
   - commands:
       [
-        'shell-exec C:\\Users\\yoruno\\scoop\\apps\\googlechrome\\current\\chrome.exe',
+        'shell-exec C:\\Users\\yoruno\\scoop\\apps\\googlechrome\\current\\chrome.exe --profile-directory=Default',
       ]
     bindings: ["alt+shift+/"]
 
@@ -264,6 +264,12 @@ keybindings:
         'shell-exec C:\\Users\\yoruno\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio --new-display=800x480 --start-app=com.baidu.carlifevehicle',
       ]
     bindings: ["Alt+Shift+f11"]
+
+  - commands:
+      [
+        'shell-exec C:\\Users\\yoruno\\scoop\\apps\\scrcpy\\current\\scrcpy-noconsole.vbs --no-audio --new-display=800x480 --start-app=com.yenole.hiplus',
+      ]
+    bindings: ["Alt+Shift+f10"]
 
   # Focus the next/previous workspace defined in `workspaces` config.
   #- commands: ['focus --next-workspace']
