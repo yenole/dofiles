@@ -7,14 +7,13 @@ local config = {
 	initial_rows = 30,
 
 	color_scheme = "Rosé Pine (base16)",
-
 	window_decorations = "RESIZE",
 	window_background_opacity = 0.85,
 	hide_tab_bar_if_only_one_tab = false,
 	tab_bar_at_bottom = true,
 
 	default_prog = { "zsh" },
-
+	-- 禁用默认的key绑定
 	disable_default_key_bindings = true,
 	keys = {
 		{ key = "Escape", mods = "SHIFT", action = wezterm.action.SendKey({ key = "~" }) },
@@ -51,4 +50,27 @@ local config = {
 	},
 }
 
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+tabline.setup({
+	options = {
+		icons_enabled = true,
+		theme = config.color_scheme,
+	},
+	sections = {
+		tabline_a = { "mode" },
+		tab_active = {
+			"index",
+			{ "parent", padding = 0 },
+			"/",
+			{ "cwd", padding = { left = 0, right = 1 } },
+			{ "zoomed", padding = 0 },
+		},
+		tab_inactive = { "index", { "process", padding = { left = 0, right = 1 } } },
+		tabline_x = { "ram", "cpu" },
+		tabline_y = { "datetime", "battery" },
+		tabline_z = { "domain" },
+	},
+})
+tabline.apply_to_config(config)
+config.window_padding = { left = 4, right = 4, bottom = 0, top = 0 }
 return config
