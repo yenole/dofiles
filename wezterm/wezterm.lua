@@ -2,17 +2,18 @@ local wezterm = require("wezterm")
 
 local config = {
 	font = wezterm.font("Maple Mono NF"),
-	font_size = 13.5,
-	initial_cols = 140,
-	initial_rows = 35,
+	font_size = 14,
+	initial_cols = 130,
+	initial_rows = 30,
 
-	color_scheme = "Dracula",
+	color_scheme = "Rosé Pine (base16)",
 
 	window_decorations = "RESIZE",
-	window_background_opacity = 0.80,
-	hide_tab_bar_if_only_one_tab = true,
+	window_background_opacity = 0.85,
+	hide_tab_bar_if_only_one_tab = false,
+	tab_bar_at_bottom = true,
 
-	default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-D", "-A", "-s", "coding" },
+	default_prog = { "zsh" },
 
 	disable_default_key_bindings = true,
 	keys = {
