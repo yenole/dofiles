@@ -18,13 +18,36 @@ local config = {
 	disable_default_key_bindings = true,
 	keys = {
 		{ key = "Escape", mods = "SHIFT", action = wezterm.action.SendKey({ key = "~" }) },
+		{ key = "Delete", mods = "SHIFT", action = wezterm.action.SendKey({ key = "`" }) },
+		{ key = "v", mods = "CMD", action = wezterm.action.PasteFrom("Clipboard") },
 		{ key = "v", mods = "CMD|SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
-		{ key = "b", mods = "CMD", action = wezterm.action.SendKey({ key = "b", mods = "CTRL" }) },
-		{ key = "d", mods = "CMD", action = wezterm.action.SendKey({ key = "d", mods = "CTRL" }) },
-		{ key = "w", mods = "CMD|SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
-		{ key = "m", mods = "CMD", action = wezterm.action.Hide },
 		{ key = "UpArrow", mods = "SHIFT", action = wezterm.action.ScrollByLine(-1) },
 		{ key = "DownArrow", mods = "SHIFT", action = wezterm.action.ScrollByLine(1) },
+		{ key = "\\", mods = "CMD", action = wezterm.action.ShowLauncher },
+		{ key = "1", mods = "CMD", action = wezterm.action.ActivateTab(0) },
+		{ key = "2", mods = "CMD", action = wezterm.action.ActivateTab(1) },
+		{ key = "3", mods = "CMD", action = wezterm.action.ActivateTab(2) },
+		{ key = "4", mods = "CMD", action = wezterm.action.ActivateTab(3) },
+		{ key = "5", mods = "CMD", action = wezterm.action.ActivateTab(4) },
+		{ key = "6", mods = "CMD", action = wezterm.action.ActivateTab(5) },
+		{ key = "]", mods = "CMD", action = wezterm.action.SpawnTab({ DomainName = "local" }) },
+		{
+			key = "=",
+			mods = "CMD",
+			action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		},
+		{
+			key = "-",
+			mods = "CMD",
+			action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		},
+		{ key = "n", mods = "CMD", action = wezterm.action.SpawnWindow },
+		{ key = "m", mods = "CMD", action = wezterm.action.Hide },
+		{ key = "d", mods = "CMD", action = wezterm.action.SendKey({ key = "d", mods = "CTRL" }) },
+	},
+
+	mouse_bindings = {
+		{ event = { Down = { streak = 1, button = "Left" } }, mods = "CTRL", action = wezterm.action.StartWindowDrag },
 	},
 }
 
